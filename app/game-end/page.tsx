@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 import { HomeIcon, SkipBackIcon } from "lucide-react"
 import { useGame } from "@/context/game-context"
-import { LinkButton } from "@/components/link-button"
 import { PageHeader } from "@/components/page-header"
+import Link from "next/link"
 
 export default function GameEndPage() {
   const router = useRouter()
@@ -16,35 +16,37 @@ export default function GameEndPage() {
   return (
     <>
       <PageHeader>Game End</PageHeader>
-      <p className="pt-2 ms-4 text-xl">
+      <p className="ms-4 pt-2 text-xl">
         User choice:
         <span className="ml-2 text-indigo-600 italic">
           {gameData.userChoice}
         </span>
       </p>
-      <p className="mt-2 ms-4 text-xl">
+      <p className="ms-4 mt-2 text-xl">
         Computer choice:
         <span className="ml-2 text-indigo-600 italic">
           {gameData.computerChoice}
         </span>
       </p>
-      <p className="mt-2 ms-4 text-xl">
+      <p className="ms-4 mt-2 text-xl">
         Result:
         <span className="ml-2 text-orange-400 italic">
           {gameData.gameResult}
         </span>
       </p>
       <p>
-        <Button onClick={onPlayAgainClick} className="mt-4 ms-2">
+        <Button onClick={onPlayAgainClick} className="ms-2 mt-4">
           <SkipBackIcon />
           Play Again
         </Button>
       </p>
       <p>
-        <LinkButton href="/" variant="link" className="mt-4 text-xl">
-          Home
-          <HomeIcon />
-        </LinkButton>
+        <Link href="/">
+          <Button variant="link" className="mt-4 text-xl">
+            Home
+            <HomeIcon />
+          </Button>
+        </Link>
       </p>
     </>
   )

@@ -6,8 +6,8 @@ import { useRouter } from "next/navigation"
 import { HomeIcon, PlayIcon } from "lucide-react"
 import { useGame } from "@/context/game-context"
 import { Choice } from "@/lib/game/types"
-import { LinkButton } from "@/components/link-button"
 import { PageHeader } from "@/components/page-header"
+import Link from "next/link"
 
 export default function GameStartPage() {
   const router = useRouter()
@@ -53,16 +53,22 @@ export default function GameStartPage() {
         </div>
       </RadioGroup>
       <p>
-        <Button className="mt-4 ms-4" onClick={onClickPlay} disabled={gameData.userChoice === Choice.UNKNOWN}>
+        <Button
+          className="ms-4 mt-4"
+          onClick={onClickPlay}
+          disabled={gameData.userChoice === Choice.UNKNOWN}
+        >
           Play
           <PlayIcon />
         </Button>
       </p>
       <p>
-        <LinkButton href="/" variant="link" className="mt-4 ms-2 text-xl">
-          Home
-          <HomeIcon />
-        </LinkButton>
+        <Link href="/">
+          <Button variant="link" className="mt-4 text-xl">
+            Home
+            <HomeIcon />
+          </Button>
+        </Link>
       </p>
     </>
   )
