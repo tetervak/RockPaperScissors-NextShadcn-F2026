@@ -1,6 +1,5 @@
 "use client"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { HomeIcon, SkipBackIcon } from "lucide-react"
 import { useGame } from "@/context/game-context"
