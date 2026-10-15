@@ -31,7 +31,6 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>
           <div className="flex min-h-screen flex-col justify-between">
             <div>
               <Header title="Rock Paper Scissors" />
@@ -43,7 +42,6 @@ export default function RootLayout({
             </div>
             <Footer name="Alex Tetervak" />
           </div>
-        </ThemeProvider>
       </body>
     </html>
   )
